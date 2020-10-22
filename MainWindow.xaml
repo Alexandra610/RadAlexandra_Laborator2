@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadAlexandra_Laborator2"
         mc:Ignorable="d"
-        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Loaded="frmMain_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="105*"/>
@@ -84,14 +84,32 @@
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top"
 Width="130">
             <MenuItem Header="File">
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit" Click="MenuItem_Click_1"/>
             </MenuItem>
             <MenuItem Header="Doughnuts">
-                <MenuItem Header="Make"/>
+                <MenuItem Header="Make">
+                    <MenuItem Header="Raised">
+                        <MenuItem x:Name="glazedMenuItem" Header="Glazed" Click="glazedMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarMenuItem" Header="Sugar" Click="sugarMenuItem_Click" IsCheckable="True"/>
+                    </MenuItem>
+                    <MenuItem Header="Filled/">
+                        
+                        <MenuItem x:Name="lemonMenuItem" Header="Lemon" IsCheckable="True" Click="lemonMenuItem_Click"/>
+                        <MenuItem x:Name="chocolateMenuItem" Header="Chocolate" Click="chocolateMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="vanillaMenuItem" Header="Vanilla" IsCheckable="True" Click="vanillaMenuItem_Click"/>
+                        
+                    </MenuItem>
+                    
+                </MenuItem>
+                <MenuItem x:Name="mnuStop" Header="Stop" Click="mnuStop_Click_1"/>
+
             </MenuItem>
+           
+
+
         </Menu>
 
-        
+
 
     </Grid>
 </Window>
